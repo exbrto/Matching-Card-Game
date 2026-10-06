@@ -16,14 +16,14 @@ function random(){
     
     parent.innerHTML = '';          // Resets HTML on game reset
 
-    let cards = ['Football','Football','Basketball','Basketball','Boxing','Boxing','Car','Car','Trophy','Trophy'];      // Value of our cards
+    let cards = ['🏀','🏀','🏟️','🏟️','🏆','🏆','👟','👟','⛹️','⛹️'];      // Hidden side of our cards
     
     while(cards.length > 0) {              // While cards.length is truthy
       const randomize = Math.floor(Math.random() * cards.length);       // Equation for random order of card values
       
       const lego = document.createElement('div');       // create a variable thats value is our created div
       parent.appendChild(lego);                         // append our legos to the parent variable on Line 7
-      lego.textContent = 'Cards'
+      lego.textContent = ' '
       lego.classList.add(cards[randomize])              // card[randomize] will give our class a random index from an array
     
       cards.splice(randomize, 1);           // Removes one of the strings from the array so it doesn't get reassigned             
@@ -56,8 +56,8 @@ function selectCard(e){
         console.log('Match')
     } else {
         console.log('Try Again')
-        cardOne.textContent = 'Card'    // if the cards are not a match then we
-        cardTwo.textContent = 'Card'     // want to flip the card (reset innertext)
+        cardOne.textContent = ' '    // if the cards are not a match then we
+        cardTwo.textContent = ' '     // want to flip the card (reset innertext)
     }
 
     cardOne = undefined
