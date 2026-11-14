@@ -56,9 +56,13 @@ function selectCard(e){
         console.log('Match')
     } else {
         console.log('Try Again')
-        cardOne.textContent = ' '    // if the cards are not a match then we
-        cardTwo.textContent = ' '     // want to flip the card (reset innertext)
-        
+        const first = cardOne         // save both cards so the delay still knows which
+        const second = cardTwo        // ones to flip after cardOne and cardTwo are reset
+        setTimeout(() => {            // wait 1 second (1000 ms) before flipping back
+            first.textContent = ' '    // if the cards are not a match then we
+            second.textContent = ' '     // want to flip the card (reset innertext)
+        }, 1000)
+
     }
 
     cardOne = undefined
